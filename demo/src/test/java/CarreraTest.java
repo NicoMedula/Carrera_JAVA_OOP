@@ -1,12 +1,13 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
-
+import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 import com.example.Carrera;
 import com.example.Circuito;
 import com.example.Equipo;
+import com.example.Filtros;
 import com.example.Ingeniero;
 import com.example.Mecanico;
 import com.example.Piloto;
@@ -15,9 +16,12 @@ import com.example.Vuelta;
 public class CarreraTest {
     
    @Test
-    void testCarrera() {
+    void fecha_de_la_carrera_Test() {
+
     Carrera carrera = new Carrera(2022, 10, 2);
+
     LocalDate expectedDate = LocalDate.of(2022, 10, 2); 
+
     assertEquals(expectedDate, carrera.getFecha());
     }
 
@@ -71,6 +75,8 @@ public class CarreraTest {
         carrera.agregarVuelta(vuelta3);
         carrera.agregarVuelta(vuelta2);
         carrera.agregarVuelta(vuelta1);
+
+        carrera.agregarPiloto(piloto);
         
         assertEquals(3, carrera.getVueltas().size());
 
@@ -82,9 +88,12 @@ public class CarreraTest {
         assertEquals("Argentina", vuelta1.getPiloto().getNacionalidad());
         assertEquals("Williams", vuelta1.getEquipo().getNombre());
         assertEquals(1234, circuito.getLongitud());
+        assertEquals(56, circuito.getCantidadVueltas());
+        assertEquals("Austin", circuito.getNombre());
 
-
-
-        }
+        assertEquals(vuelta3, carrera.getVueltas().get(0));
+        assertEquals(1, carrera.getParticipantes().size());
+        
+    }
 }
 
