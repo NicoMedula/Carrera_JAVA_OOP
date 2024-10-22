@@ -7,11 +7,14 @@ public class Carrera {
 
     private ArrayList<Piloto> participantes;
     private Circuito circuito;
+    private ArrayList<Vuelta> vueltas;
 
     public Carrera(int anio,int mes, int dia) {
         setFecha(anio,mes,dia);
         participantes = new ArrayList<Piloto>();
+        vueltas = new ArrayList<Vuelta>();
     }
+
 
     public void setFecha(int anio,int mes, int dia){
         this.fecha = LocalDate.of(anio, mes, dia);
@@ -34,6 +37,13 @@ public class Carrera {
     }
     public Circuito getCircuito(){
         return circuito;
+    }
+
+    public void agregarVuelta(Vuelta vuelta){
+        vueltas.add(vuelta);
+    }
+    public ArrayList<Vuelta> getVueltas(){
+        return vueltas;
     }
 
 }
