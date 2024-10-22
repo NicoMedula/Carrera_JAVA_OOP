@@ -4,12 +4,13 @@ import java.time.LocalDate;
 
 public class Circuito implements ISponsoreable {
     private String nombre;
-    private int longitud;
+    private double longitud;
     private int cantidadVueltas;
     private ArrayList<SponsorContrato> sponsors = new ArrayList<SponsorContrato>();
+
     
 
-    public Circuito(String nombre, int longitud, int cantidadVueltas) {
+    public Circuito(String nombre, double longitud, int cantidadVueltas) {
         setNombre(nombre);
         setLongitud(longitud);
         setCantidadVueltas(cantidadVueltas);
@@ -23,11 +24,11 @@ public class Circuito implements ISponsoreable {
         this.nombre = nombre;
     }
 
-    public int getLongitud(){
+    public double getLongitud(){
         return longitud;
     }
 
-    public void setLongitud(int longitud) {
+    public void setLongitud(double longitud) {
         this.longitud = longitud;
     }
 

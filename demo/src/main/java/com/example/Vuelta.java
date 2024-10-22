@@ -5,9 +5,9 @@ public class Vuelta {
     private Circuito circuito;
     private double d;
 
-    public Vuelta(Piloto piloto, Equipo equipo, Circuito circuito, double d) {
+    public Vuelta(Piloto piloto, Equipo equipo, Circuito circuito, double duracion) {
         
-        setDuracion(d);
+        setDuracion(duracion);
         setCircuito(circuito);
         setPiloto(piloto);
         setEquipo(equipo);
