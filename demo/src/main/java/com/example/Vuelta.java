@@ -4,11 +4,20 @@ public class Vuelta {
     private Equipo equipo;
     private Circuito circuito;
     private double d;
+    int vuelta;
+    
 
-    public Vuelta(Piloto piloto, Equipo equipo, Circuito circuito, double duracion) {
+    public Vuelta(Piloto piloto, Equipo equipo,double duracion,Circuito circuito ) {
         
         setDuracion(duracion);
         setCircuito(circuito);
+        setPiloto(piloto);
+        setEquipo(equipo);
+    }
+
+    public Vuelta(Piloto piloto, Equipo equipo,double duracion,int vuelta){
+        setDuracion(duracion);
+        this.vuelta = vuelta;
         setPiloto(piloto);
         setEquipo(equipo);
     }

@@ -2,11 +2,25 @@ package com.example;
 import java.util.ArrayList;
 import java.time.LocalDate;
 
-public class Circuito implements ISponsoreable {
+/*Encapsulamiento: las propiedades como nombre, nacionalidad, ingenieroPrincipal, etc., 
+son privadas, y los métodos get y set permiten acceder y modificar esos
+ atributos de manera controlada 
+
+Polimorfismo: Se ve en la implementación de la interfaz ISponsoreable por la clase Piloto
+Diferentes implementaciones de los métodos remover() (sobrecarga)
+ 
+ Abstraccion: Las clases Persona,Piloto,Mecanico,Ingeniero representan
+ entidades del mundo real.
+
+ Herencia: las clases Piloto,Mecanico,Ingeniero heredan de Persona (atributos).
+ */
+
+public class Circuito implements ISponsoreable,INombreParaLed {
     private String nombre;
     private double longitud;
     private int cantidadVueltas;
     private ArrayList<SponsorContrato> sponsors = new ArrayList<SponsorContrato>();
+    Circuito circuito;
 
     
 
@@ -15,6 +29,10 @@ public class Circuito implements ISponsoreable {
         setLongitud(longitud);
         setCantidadVueltas(cantidadVueltas);
     }
+    public Circuito (String value){
+        setNombre(value);
+    }
+    
     
     public String getNombre() {
         return this.nombre;
@@ -101,6 +119,9 @@ public class Circuito implements ISponsoreable {
         return habilitados;
     }
     
+    public String getNombreParaLed(){
+        return "Circuito:"+" "+getNombre()+" "+ "(Longitud XXX mts.)";
+     }
 
 
 }

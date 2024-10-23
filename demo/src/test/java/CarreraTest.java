@@ -1,13 +1,12 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
 import com.example.Carrera;
 import com.example.Circuito;
 import com.example.Equipo;
-import com.example.Filtros;
 import com.example.Ingeniero;
 import com.example.Mecanico;
 import com.example.Piloto;
@@ -94,6 +93,36 @@ public class CarreraTest {
         assertEquals(vuelta3, carrera.getVueltas().get(0));
         assertEquals(1, carrera.getParticipantes().size());
         
+    }
+
+    @Test
+    void parcial_prueba_YTest(){
+        Circuito circuito = new Circuito("UCP");
+       
+        Carrera carrera = new Carrera(circuito);
+
+        // Crear 10 pilotos usando un bucle for
+        for (int i = 1; i <= 10; i++) {
+            Piloto piloto = new Piloto("Piloto " + i,"Argentino");
+            Equipo equipo = new Equipo("Equipo " + i);
+            
+            // Insertar 56 vueltas para cada piloto
+            for (int j = 1; j <= 56; j++) {
+                double tiempo = i * j * 1000;
+		    int numeroVuelta = j;
+                Vuelta vuelta = new Vuelta(piloto, equipo, tiempo, numeroVuelta);
+                carrera.setNumVuelta(numeroVuelta);
+            }
+            
+            carrera.agregarPiloto(piloto);
+        }
+
+
+
+
+
+
+
     }
 }
 

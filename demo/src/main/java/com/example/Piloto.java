@@ -3,7 +3,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Piloto extends  Persona
-                    implements ISponsoreable {
+                    implements ISponsoreable{
 
     private ArrayList<SponsorContrato> sponsors = new ArrayList<SponsorContrato>();
     
@@ -69,6 +69,12 @@ public class Piloto extends  Persona
 
         return habilitados;
     }
+
+    @Override
+    public String getNombreParaLed(){
+        return "Piloto:"+ " "+ getNombre();
+     }
+
 
 
 }

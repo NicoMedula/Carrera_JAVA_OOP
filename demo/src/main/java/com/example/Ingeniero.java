@@ -6,4 +6,8 @@ public class Ingeniero extends  Persona {
         super(nombre, nacionalidad);
     }
     
+    @Override
+    public String getNombreParaLed(){
+        return getNombre();
+     }
 }

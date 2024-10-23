@@ -1,6 +1,6 @@
 package com.example;
 
-public class Persona {
+public class Persona implements INombreParaLed{
    private String nombre;
    private String nacionalidad;
 
@@ -25,4 +25,7 @@ public class Persona {
     this.nacionalidad = nacionalidad;
    }
    
+   public String getNombreParaLed(){
+      return getNombre();
+   }
 }

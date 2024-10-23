@@ -1,6 +1,6 @@
 package com.example;
 
-public class Sponsor {
+public class Sponsor implements INombreParaLed{
     
     private String nombre;
 
@@ -15,5 +15,8 @@ public class Sponsor {
         return this.nombre;  
     }
 
+    public String getNombreParaLed(){
+        return "Sponsor:"+" "+getNombre();
+     }
     
 }

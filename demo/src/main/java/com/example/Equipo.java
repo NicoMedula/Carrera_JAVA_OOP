@@ -3,7 +3,7 @@ package com.example;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Equipo {
+public class Equipo implements INombreParaLed {
     
     private ArrayList<Mecanico> mecanicos = new ArrayList<Mecanico>();
     private ArrayList<Piloto> pilotos  = new ArrayList<Piloto>();
@@ -101,6 +101,10 @@ public class Equipo {
 
         return habilitados;
     }
+
+    public String getNombreParaLed(){
+        return getNombre();
+     }
 
 
 }

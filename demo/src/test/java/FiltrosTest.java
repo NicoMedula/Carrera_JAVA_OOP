@@ -116,7 +116,6 @@ public class FiltrosTest {
     @Test
     void filtro_contar_circuitos_por_longitud_Test() {
         Filtros filtro = new Filtros();
-        Carrera carrera = new Carrera(2024, 3, 15);
         
         ArrayList<Circuito> circuitos = new ArrayList<>();
         

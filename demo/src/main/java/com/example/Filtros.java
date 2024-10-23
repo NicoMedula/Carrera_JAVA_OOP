@@ -21,7 +21,7 @@ public class Filtros {
     public long contarPilotosPorEquipo(ArrayList<Vuelta> vueltas, String nombreEquipo) {
         return vueltas.stream()
                       .filter(v -> v.getEquipo().getNombre().equals(nombreEquipo))
-                      .map(Vuelta::getPiloto)
+                      .map(Vuelta::getPiloto)//transforma cada objeto Vuelta en el piloto que hizo esa vuelta
                       .distinct()  // Evita duplicados
                       .count();
     }
